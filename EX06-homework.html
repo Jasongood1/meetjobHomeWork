@@ -1,0 +1,158 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+	<title>下拉式選單</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+	<style >
+		#container{
+			max-width: 1920px;
+			position:relative;
+		}
+
+		#menu{
+			width: 100%;
+			/*height: 70px;*/
+			background-color: #555;
+		}
+
+		#menulist{
+			position: absolute; /*position 定位 : fixed固定 absolute 依父位置做絕對位置*/
+			height: 100%;
+		}
+		#menulist , #menulist ul{
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+		#menulist li{
+			border-right: 1px solid #ffffff;
+			float: left;
+			background-color: #555;
+			
+
+		}
+		#menulist a{
+			color: #ffffff;
+			display: block;
+			text-decoration: none;
+			width: 80px;
+		}
+
+		#menulist li ul{
+			position: absolute; /*位置是絕對位置*/
+			left: auto; /*對於絕對位置元素 會依內容需要寬度來設置*/
+			width: 80px;
+		}
+		.active{
+			background-color: #ff0000;
+		}
+
+		#red{
+			width:100%;
+			height:120px;
+			background-color: #ff0000
+		}
+		#pic{
+			width: 100%;
+		}
+
+	</style>
+
+	<script >
+		$(document).ready(function(){
+
+			$("#menulist li ul").hide();
+			$("#menulist li").hover(
+			   function(){
+				    $(this).find("ul").slideDown("fast");
+				    $(this).find("a:first").addClass("active");
+				},function(){
+					$(this).find(".submenu").fadeOut("fast");
+					$(this).find("a").removeClass("active");
+
+				}
+
+
+				)
+		});
+	</script>
+	
+</head>
+<body>
+<div id="containetr">
+	<div id="menu">
+
+
+		<ul id="menulist">
+
+			<li><a href="#">產品</a>
+				<ul id="submenu">
+					<li><a href="#">3C</a></li>
+					<li><a href="#">家電</a></li>
+					<li><a href="#">汽車</a></li>
+				</ul>
+			</li>	
+
+			<li><a href="#">服務</a>
+				<ul class="submenu">
+					<li><a href="#">Line</a></li>
+					<li><a href="#">來電客服</a></li>
+					<li><a href="#">據點位置</a></li>
+				</ul>
+			</li>
+
+			<li><a href="#">分類</a>
+				<ul class="submenu">
+					<li><a href="#">分類一</a></li>
+					<li><a href="#">分類二</a></li>
+					<li><a href="#">分類三</a></li>
+				</ul>
+			</li>
+
+			<li><a href="#">選擇區域</a>
+				<ul class="submenu">
+					<li><a href="#">北部</a></li>
+					<li><a href="#">中部</a></li>
+					<li><a href="#">南部</a></li>
+				</ul>
+			</li>
+
+			<li><a href="#">聯係我們</a></li>	
+		</ul>
+		
+	</div>
+
+	<div id="pic">
+		<img src="./img/01.jpg">
+
+	</div>
+
+	<p></p>
+
+	<button id="btn">手機型號</button>
+
+	<div id="red" >
+		<p>iphone 11</p>
+		<p>iphone 12</p>
+		<p>iphone 13</p>
+		<p>iphone 14</p>
+	</div>
+	
+	<script >
+		$(document).ready(function(){
+			$("#btn").click(function(){
+				
+				//$("#red").slideToggle();
+				$("#red").slideUp(); 
+				// .slideDown(); 
+				// .slideToggle(); 
+				
+			})
+		});
+	</script>
+
+</div>
+</body>
+</html>
