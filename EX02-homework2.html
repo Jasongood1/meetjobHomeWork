@@ -1,0 +1,103 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>表單</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+	<form id="form1" action="order.php" method="post">
+		<!--
+			fieldset是 元素區塊 被包起來的範圍視為同一個區塊 這區塊會有邊框
+			label標籤 用來讓表單來控制元件的說明標籤 : 
+			1.一般label裡 for 對應的是表單元件的id名稱
+			2.在寫label時 可以將for省略
+
+
+
+		-->
+		<fieldset>
+			<legend>帳單資訊</legend>
+			<div>
+				<label for="name">姓名</label>
+				<input type="text" id="name">
+			</div>
+
+			<div>
+				<label for="addres">地址</label>
+				<input type="text" id="addres">
+			</div>
+
+			<div>
+				<span>付款方式</span>
+				<input type="radio" name="payment" value="creditcard" id="creditcard" checked>
+				<label for="creditcard" >信用卡</label>
+				<input type="radio" name="payment" value="transfer" id="transfer " >
+				<label for="transfer">轉帳</label> <!--當點到轉帳時 同時卡號與有校期限不可以輸入-->
+			</div>
+			<div id="credit">
+				<div>
+					<label for="cardNumber">卡號</label> 
+					<input type="text" id="cardNumber" >
+				</div>
+				<!--
+					attr ("disabled",ture) 表示不可以輸入
+					attr ("disabled",false) 表示可以輸入
+				-->
+				<div>
+					<label for="expiration">有效期限</label> 
+					<input type="text" id="expiration">
+				</div>
+						
+			</div>
+
+		</fieldset>
+
+		<fieldset>
+			<legend>送貨地址</legend>
+			<div>
+				<input type="checkbox" id="hideShip" checked>  <!--打勾同帳單地址 則姓名與地址都隱藏  預設是穎藏 
+																沒打勾時 則姓名與地址都要顯示出來-->
+				<label for="hideShip">同帳單地址</label>
+			</div>
+			<div>
+				<label for="hideName">姓名 : </label>
+				<input type="text" id="hideName">
+			</div>
+			<div>
+				<label for="shipAddress">地址 : </label>
+				<input type="text" id="shipAddress">
+			</div>
+
+
+		</fieldset>
+
+	</form>
+	<script >
+		$(document).ready(function(){
+			$("#transfer").click(function(){
+				
+				if ($("this").prop("checked") == true) {
+					$("#cardNumber").prop( "disabled", false );
+					$("#expiration").prop( "disabled", false );
+				} else {
+					$("#cardNumber").prop( "disabled", true );
+					$("#expiration").prop( "disabled", true );
+				}
+
+			})	
+			$("#hideShip").click(function(){
+				if ($("#hideShip").is(":checked)") {
+					$("#hideName").hide();
+					$("#shipAddress").hide();
+				} else {
+					$("#hideName").show();
+					$("#shipAddress").show();
+				}
+			})			
+		});
+
+	</script>
+</body>
+</html>
