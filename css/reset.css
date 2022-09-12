@@ -1,0 +1,375 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  max-width: 1920px;
+  padding: 0 15px;
+}
+.logo {
+  float: left;
+}
+.search {
+  float: right;
+}
+.header img {
+  margin: 10px 20px;
+}
+.search-btn {
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.nav {
+  background-color: #044996;
+  height: 60px;
+  clear: left;
+  padding: 16px 20px;
+  position: relative;
+  z-index: 2;
+}
+.nav-list li a {
+  float: left;
+  margin: 0px 5px;
+  padding: 8px 20px;
+  display: block;
+  color: #fff;
+}
+.nav-list li a:hover {
+  background-color: #02346c;
+  border-radius: 5px;
+}
+.program,
+.drama,
+.channel,
+.more {
+  position: absolute;
+}
+.program li {
+  position: relative;
+  left: 580px;
+  min-height: 50px;
+  top: 60px;
+  float: left;
+  clear: left;
+  color: #000;
+}
+
+.drama li {
+  position: relative;
+  left: 660px;
+  min-height: 50px;
+  top: 60px;
+  float: left;
+  clear: left;
+  color: #000;
+}
+
+.channel li {
+  position: relative;
+  left: 960px;
+  min-height: 50px;
+  top: 60px;
+  float: left;
+  clear: left;
+  color: #000;
+}
+
+.more li {
+  position: relative;
+  left: 1075px;
+  min-height: 50px;
+  top: 60px;
+  float: left;
+  clear: left;
+  color: #000;
+}
+.banner {
+  background-color: #000;
+  height: 480px;
+  position: relative;
+  padding: 0 32px;
+  z-index: 1;
+}
+.carousel {
+  max-width: 880px;
+  max-height: 480px;
+  position: relative; /*將輪播框定位*/
+  overflow: hidden; /*超過輪播框範圍就隱藏*/
+}
+.carousel .banner-img {
+  max-width: 5000px; /*所有圖片放在輪播框裡*/
+}
+
+.carousel .banner-img img {
+  min-width: 880px;
+  max-height: 480px;
+}
+.banner-img li {
+  float: left;
+  clear: both;
+}
+
+.banner .btn {
+  width: 30px;
+  height: 50px;
+  background-color: #988d8d76;
+  filter: alpha(opacity=0.5);
+  position: absolute;
+  top: 50%; /*左右按紐在邊框高度一半疊在一起*/
+  cursor: pointer;
+  text-align: center;
+  font-size: 50px;
+}
+
+.banner .left {
+  left: 0px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.banner .right {
+  right: 0px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.aside {
+  position: relative;
+  float: right;
+  top: -480px;
+  padding-left: 25px;
+  width: 280px;
+  height: 100%;
+}
+.aside-item1 {
+  background-image: url("/img/5.jpg");
+  width: 100%;
+  height: 30%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.item-text {
+  position: relative;
+  top: 40%;
+}
+.item-text button,
+h3 {
+  margin: 5px;
+  font-size: 18px;
+  line-height: 1;
+}
+.aside-item2 {
+  background-image: url("/img/6.jpg");
+  width: 100%;
+  height: 30%;
+  margin: 23px 0px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.aside-item3 {
+  background-image: url("/img/7.jpg");
+  width: 100%;
+  height: 30%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.section-news {
+  clear: left;
+  max-width: 1220px;
+}
+.section-news p {
+  margin: 0 auto;
+}
+.section-news .news-text {
+  display: block;
+  text-align: center;
+  line-height: 1.5;
+  color: #000;
+  font-size: 50px;
+  padding: 20px;
+}
+
+.news-nav {
+  width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.weather {
+  display: flex;
+  justify-content: space-between;
+}
+.weather h3 a {
+  text-align: center;
+  display: block;
+  padding-right: 15px;
+  margin-bottom: 10px;
+  border-right: 2px solid #000;
+}
+.weather p a {
+  display: block;
+  width: 25%;
+  margin-left: 10px;
+}
+.link-coin {
+  display: flex;
+}
+.link-coin h3 a {
+  display: block;
+  text-align: center;
+  padding-right: 15px;
+  border-right: 2px solid #000;
+}
+.link-coin p {
+  color: #000;
+  font-size: 20px;
+  padding-top: 5px;
+  margin-left: 10px;
+}
+.coin {
+  display: flex;
+}
+.coin li {
+  margin-left: 10px;
+}
+.coin li img {
+  width: 80%;
+}
